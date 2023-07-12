@@ -1,0 +1,125 @@
+label {
+  margin-top: -20px;
+  width: 75px;
+  height: 35px;
+  position: relative;
+  display: block;
+  background: #ebebeb;
+  border-radius: 20px;
+  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+label:after {
+  content: "";
+  width: 33px;
+  height: 33px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background: linear-gradient(180deg, #ffcc89, #d8860b);
+  border-radius: 18px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+input[type="checkbox"] {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+input[type="checkbox"]:checked+label {
+  background: #242424;
+}
+
+input[type="checkbox"]:checked+label:after {
+  left: 30px;
+  transform: translateX(25%);
+  background: linear-gradient(180deg, #777, #3a3a3a);
+}
+
+label,
+label:after {
+  transition: 0.3s
+}
+
+label:active:after {
+  width: 26px;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  z-index: -1;
+  position: absolute;
+  transition: 0.3s;
+}
+
+input[type="checkbox"]:checked+label+.background {
+  background: #242424;
+}
+
+label svg {
+  position: absolute;
+  width: 17px;
+  top: 5px;
+  z-index: 100;
+}
+
+label svg.sun {
+  left: 10px;
+  fill: #fff;
+  transition: 0.3s;
+}
+
+label svg.moon {
+  left: 50px;
+  fill: #7e7e7e;
+  transition: 0.3s;
+}
+
+input[type="checkbox"]:checked+label svg.sun {
+  fill: #7e7e7e;
+}
+
+input[type="checkbox"]:checked+label svg.moon {
+  fill: #fff;
+}
+
+@media only screen and (max-width: 1023px) {
+  label {
+    margin-top: -10px;
+    width:32px;
+    height:15px;
+    margin-left: 5px;
+  }
+  label:after {
+    width:12px;
+    height: 12px;
+  }
+  input[type="checkbox"] {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+  input[type="checkbox"]:checked + label:after {
+    left:30px;
+    transform: translateX(5%);
+    background: linear-gradient(180deg,#777,#3a3a3a);
+  }
+  label:active:after{ 
+    width: 13px; 
+  }
+  label svg {
+    width: 10px;
+    top:-4px;
+  }
+  label svg.sun {
+    left:03px;
+  }
+  label svg.moon {
+    left:20px;
+  }
+  
+}
